@@ -1,18 +1,23 @@
 all: up
 
+# propably add folders for the volumes
+
 # the -f is the flag to specifie the .yml file afterwards
 # the -d flag lets the containers run detached from the running terminal
 up: 
-	docker-compose -f docker-compose.yml up -d
+	docker-compose -f src/docker-compose.yml up -d
 
 down:
-	docker-compose -f docker-compose.yml down
+	docker-compose -f src/docker-compose.yml down
 
 stop:
-	docker-compose -f docker-compose.yml stop
+	docker-compose -f src/docker-compose.yml stop
 
 start:
-	docker-compose -f docker-compose.yml start
+	docker-compose -f src/docker-compose.yml start
+
+del:
+	docker system prune -a
 
 # ps shows all RUNNING Containers 
 ps:
