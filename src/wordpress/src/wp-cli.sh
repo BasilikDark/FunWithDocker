@@ -1,8 +1,8 @@
 #! /bin/bash
 
 # preping file
-mkdir /var/www/
-mkdir /var/www/html
+mkdir -p /var/www/
+mkdir -p /var/www/html
 
 # Install WordPress in the volume directory
 wp core download --path=/var/www/html
@@ -15,4 +15,4 @@ wp core download --path=/var/www/html
 
 # Activate your desired plugins and themes
 
-/usr/sbin/php-fpm7.3 -F
+/usr/sbin/php-fpm -F

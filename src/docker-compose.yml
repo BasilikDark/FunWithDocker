@@ -20,6 +20,8 @@ services:
 #      - mariadb
     env_file:
       - .env
+    expose:
+      - 9000
     networks:
       - inception
     volumes:

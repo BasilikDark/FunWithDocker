@@ -9,7 +9,7 @@ RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
         -keyout /etc/nginx/ssl/rrupp.key \
         -subj "/CN=rrupp/"
 
-COPY conf/nginx.conf /etc/nginx/http.d/nginx.conf
+COPY src/nginx.conf /etc/nginx/http.d/nginx.conf
 
 EXPOSE 443
 
