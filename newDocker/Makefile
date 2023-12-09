@@ -19,10 +19,9 @@ stop:
 start:
 	docker-compose -f srcs/docker-compose.yml start
 
-del:
-	docker system prune -a
-	docker volume prune -a
-#	rm -rf ~/inception
+del: down
+	docker system prune --volumes -af
+	docker volume prune -af
 
 # ps shows all RUNNING Containers 
 ps:
@@ -37,13 +36,13 @@ net:
 	docker network ls
 
 $(DIR):
-	mkdir -p ~/inception
-	mkdir -p ~/inception/srcs
+	mkdir -p ~/data
+
 
 $(DIR_M): $(DIR)
-	mkdir -p ~/inception/srcs/mariadb
+	mkdir -p ~/data/mariadb
 
 
 $(DIR_W): $(DIR)
-	mkdir -p ~/inception/srcs/wordpress
+	mkdir -p ~/data/wordpress
 
